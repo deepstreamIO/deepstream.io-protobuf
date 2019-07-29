@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 enum RPC_ACTION {
-    UNKNOWN = 0;
+  UNKNOWN = 0;
 
   ERROR = 1;
   REQUEST = 2;
@@ -40,7 +40,7 @@ message RpcMessage {
     string reason = 8;
   
     // permission
-    int32 originalAction = 9;  
+    RPC_ACTION originalAction = 9;  
 
     // requestorName = 'rn',
     // requestorData = 'rd',

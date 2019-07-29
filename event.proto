@@ -32,7 +32,7 @@ enum EVENT_ACTION {
 }
 
 message EventMessage {
-    required RPC_ACTION action = 1;
+    required EVENT_ACTION action = 1;
     string data = 2;
     string correlationId = 3;
     bool isError = 4;
