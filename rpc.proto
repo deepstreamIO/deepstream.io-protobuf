@@ -1,33 +1,35 @@
 syntax = "proto3";
 
+option java_package = "io.deepstream.protobuf";
+
 enum RPC_ACTION {
-  UNKNOWN = 0;
+    RPC_UNKNOWN = 0;
 
-  ERROR = 1;
-  REQUEST = 2;
-  ACCEPT = 4;
-  RESPONSE = 5;
-  REJECT = 6;
-  REQUEST_ERROR = 7;
-  PROVIDE = 8;
-  UNPROVIDE = 9;
+    RPC_ERROR = 1;
+    RPC_REQUEST = 2;
+    RPC_ACCEPT = 4;
+    RPC_RESPONSE = 5;
+    RPC_REJECT = 6;
+    RPC_REQUEST_ERROR = 7;
+    RPC_PROVIDE = 8;
+    RPC_UNPROVIDE = 9;
 
-  NO_RPC_PROVIDER = 100;
-  ACCEPT_TIMEOUT = 101;
-  MULTIPLE_ACCEPT = 102;
-  INVALID_RPC_CORRELATION_ID = 103;
-  RESPONSE_TIMEOUT = 104;
-  MULTIPLE_RESPONSE = 105;
+    RPC_NO_RPC_PROVIDER = 100;
+    RPC_ACCEPT_TIMEOUT = 101;
+    RPC_MULTIPLE_ACCEPT = 102;
+    RPC_INVALID_RPC_CORRELATION_ID = 103;
+    RPC_RESPONSE_TIMEOUT = 104;
+    RPC_MULTIPLE_RESPONSE = 105;
 
-  MESSAGE_PERMISSION_ERROR = 106;
-  MESSAGE_DENIED = 107;
-  INVALID_MESSAGE_DATA = 108;
-  MULTIPLE_PROVIDERS = 109;
-  NOT_PROVIDED = 110;
+    RPC_MESSAGE_PERMISSION_ERROR = 106;
+    RPC_MESSAGE_DENIED = 107;
+    RPC_INVALID_MESSAGE_DATA = 108;
+    RPC_MULTIPLE_PROVIDERS = 109;
+    RPC_NOT_PROVIDED = 110;
 }
 
 message RpcMessage {
-    required RPC_ACTION action = 1;
+    RPC_ACTION action = 1;
     string data = 2;
     string correlationId = 3;
     bool isError = 4;
@@ -40,7 +42,7 @@ message RpcMessage {
     string reason = 8;
   
     // permission
-    RPC_ACTION originalAction = 9;  
+    int32 originalAction = 9;  
 
     // requestorName = 'rn',
     // requestorData = 'rd',
