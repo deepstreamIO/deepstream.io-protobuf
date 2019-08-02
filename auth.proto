@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-package deepstream;
-
 option java_package = "io.deepstream.protobuf";
 
 enum AUTH_ACTION {
