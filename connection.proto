@@ -27,5 +27,7 @@ message ConnectionMessage {
 
     string url = 5;
     string protocolVersion = 6;
+    string sdkType = 8;
+    string sdkVersion = 7;
   }
   
