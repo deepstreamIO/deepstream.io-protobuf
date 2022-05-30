@@ -15,6 +15,5 @@ message ClusterMessage {
     bool isAck = 4;
 
     int32 leaderScore = 5;
-    string externalUrl = 6;
     string role = 7;
 }
