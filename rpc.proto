@@ -34,18 +34,15 @@ message RpcMessage {
     string correlationId = 3;
     bool isError = 4;
     bool isAck = 5;
-  
+
     repeated string names = 6;
-  
+
     // rpc
     string name = 7;
-    string reason = 8;
-  
-    // permission
-    int32 originalAction = 9;  
 
-    // requestorName = 'rn',
-    // requestorData = 'rd',
-    // trustedSender = 'ts',
+    // permission
+    int32 originalAction = 9;
+
+    string requestorName = 10;
+    string requestorData = 11;
   }
-  
